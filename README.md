@@ -98,3 +98,4 @@ Repeated publishes in quick succession collapse into one build.
 - **Contact.** "Get in touch" and the nav's Contact link jump to the contact section on the current page.
 
 Copy was migrated exactly as written. A few typos you may want to fix in Sanity: "repetetive" (About → Home and Business Automation), "workoholic" (Bookshelf → The 4-Hour Workweek), "Below are a selection" (Bookshelf intro).
+# coryangell
