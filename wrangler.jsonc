@@ -1,0 +1,10 @@
+{
+  "$schema": "./node_modules/wrangler/config-schema.json",
+  "name": "coryangell-com",
+  "compatibility_date": "2026-10-23",
+  // Static-assets-only Worker: no script, Cloudflare serves ./dist directly.
+  "assets": {
+    "directory": "./dist",
+    "not_found_handling": "404-page"
+  }
+}

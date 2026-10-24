@@ -1,0 +1,8 @@
+# Legacy WordPress URLs from the old site
+/uncategorized/* / 301
+/category/* / 301
+/author/* / 301
+/feed/ / 301
+/comments/feed/ / 301
+/wp-sitemap.xml /sitemap-index.xml 301
+/index.php / 301

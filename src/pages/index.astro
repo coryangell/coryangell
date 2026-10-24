@@ -1,0 +1,372 @@
+---
+import Base from '../layouts/Base.astro';
+import Img from '../components/Img.astro';
+import SocialLinks from '../components/SocialLinks.astro';
+import { getContent, paragraphs } from '../lib/content';
+
+const { home, settings } = await getContent();
+const { hero, about, skills, featuredQuote, experience, recommendations } = home;
+---
+
+<Base title={home.seoTitle} description={home.seoDescription} headerTone="cream">
+  <section class="hero">
+    <div class="container split">
+      <div class="hero__text">
+        <h1 class="h-display">{hero.heading}</h1>
+        <div class="muted">{paragraphs(hero.body).map((p) => <p>{p}</p>)}</div>
+        <a class="btn" href={hero.ctaHref}>{hero.ctaLabel}</a>
+      </div>
+      <Img image={hero.image} widths={[480, 720, 960]} sizes="(max-width: 767px) 100vw, 560px" class="hero__img" loading="eager" />
+    </div>
+  </section>
+
+  <section class="logos" aria-label="Companies I've worked with">
+    <div class="container split">
+      <ul class="logos__list">
+        {
+          home.logos.map((logo) => (
+            <li>
+              <Img image={logo} widths={[160]} sizes="80px" />
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  </section>
+
+  <section class="about section">
+    <div class="container narrow center">
+      <h2 class="h-section">{about.heading}</h2>
+      <p class="about__tagline">{about.tagline}</p>
+      <div class="muted">{paragraphs(about.body).map((p) => <p>{p}</p>)}</div>
+    </div>
+  </section>
+
+  <section class="skills section">
+    <div class="container split">
+      <div class="certs">
+        {home.certifications.map((cert) => <Img image={cert} widths={[320, 640]} sizes="320px" />)}
+      </div>
+      <div>
+        <h2 class="h-section">{skills.heading}</h2>
+        {
+          skills.items.map((item) => (
+            <div class="skill">
+              <h3>{item.title}</h3>
+              <p class="muted">{item.description}</p>
+            </div>
+          ))
+        }
+        <hr />
+        <a class="btn" href={skills.ctaHref} target="_blank" rel="noopener">{skills.ctaLabel}</a>
+        <div class="skills__social"><SocialLinks links={settings.socialLinks} /></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="featured-quote section">
+    <figure class="container narrow">
+      <img src="/quote-mark.png" alt="" width="45" height="30" class="featured-quote__mark" />
+      <blockquote>{paragraphs(featuredQuote.quote).map((p) => <p>{p}</p>)}</blockquote>
+      <figcaption>– {featuredQuote.attribution}</figcaption>
+    </figure>
+  </section>
+
+  <section class="experience section">
+    <div class="container center">
+      <h2 class="h-section">{experience.heading}</h2>
+      <ul class="experience__logos">
+        {
+          experience.logos.map((logo) => (
+            <li>
+              <Img image={logo} widths={[240, 480]} sizes="240px" />
+            </li>
+          ))
+        }
+      </ul>
+      <a class="btn" href={experience.ctaHref} target="_blank" rel="noopener">{experience.ctaLabel}</a>
+    </div>
+  </section>
+
+  <section class="recs section">
+    <div class="container center">
+      <h2 class="h-section">{recommendations.heading}</h2>
+    </div>
+    <div class="carousel" data-carousel>
+      <div class="carousel__track" tabindex="0" aria-label="Colleague recommendations" role="region">
+        {
+          recommendations.items.map((rec, i) => (
+            <figure class="carousel__slide" data-index={i}>
+              <blockquote>{rec.quote}</blockquote>
+              <figcaption>– {rec.attribution}</figcaption>
+            </figure>
+          ))
+        }
+      </div>
+      <div class="carousel__dots">
+        {
+          recommendations.items.map((rec, i) => (
+            <button type="button" aria-label={`Show recommendation from ${rec.attribution}`} data-dot={i} />
+          ))
+        }
+      </div>
+    </div>
+    <div class="container center">
+      <a class="btn" href={recommendations.ctaHref} target="_blank" rel="noopener">{recommendations.ctaLabel}</a>
+    </div>
+  </section>
+</Base>
+
+<script>
+  for (const root of document.querySelectorAll<HTMLElement>('[data-carousel]')) {
+    const track = root.querySelector<HTMLElement>('.carousel__track')!;
+    const slides = [...root.querySelectorAll<HTMLElement>('.carousel__slide')];
+    const dots = [...root.querySelectorAll<HTMLButtonElement>('[data-dot]')];
+
+    const setActive = (i: number) => {
+      slides.forEach((s, j) => s.classList.toggle('is-active', i === j));
+      dots.forEach((d, j) => d.setAttribute('aria-current', String(i === j)));
+    };
+    const goTo = (i: number) => {
+      const s = slides[i];
+      track.scrollTo({ left: s.offsetLeft - (track.clientWidth - s.clientWidth) / 2, behavior: 'smooth' });
+    };
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        for (const e of entries) if (e.isIntersecting) setActive(slides.indexOf(e.target as HTMLElement));
+      },
+      { root: track, threshold: 0.6 },
+    );
+    slides.forEach((s) => observer.observe(s));
+    dots.forEach((d, i) => d.addEventListener('click', () => goTo(i)));
+    setActive(0);
+  }
+</script>
+
+<style>
+  .hero {
+    background: var(--cream);
+    padding-top: 20px;
+  }
+  @media (min-width: 768px) {
+    .hero .split {
+      grid-template-columns: 5fr 6fr;
+      gap: 8%;
+    }
+  }
+  .hero__text {
+    padding-bottom: 60px;
+  }
+  .hero__text .muted {
+    margin: 28px 0 32px;
+  }
+  .hero :global(.hero__img) {
+    width: 100%;
+    margin-bottom: -140px;
+    position: relative;
+  }
+
+  .logos {
+    background: var(--bg);
+    padding: 60px 0;
+  }
+  .logos__list {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px 32px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .logos__list :global(img) {
+    max-height: 40px;
+    width: auto;
+  }
+
+  .about {
+    background: var(--bg);
+    padding-top: 60px;
+  }
+  .narrow {
+    max-width: calc(780px + 2 * var(--gutter));
+  }
+  .about__tagline {
+    font-size: 24px;
+    line-height: 1.2;
+    margin: 0 0 4px;
+    letter-spacing: -0.5px;
+  }
+  .about .muted {
+    font-size: 16px;
+  }
+
+  .skills {
+    background: var(--bg);
+    padding-top: 40px;
+  }
+  .skills .split {
+    align-items: center;
+  }
+  .certs {
+    display: grid;
+    justify-items: center;
+    gap: 40px;
+  }
+  .certs :global(img) {
+    max-width: 320px;
+  }
+  .skill h3 {
+    font-size: 24px;
+    letter-spacing: -1.5px;
+    line-height: 1.6;
+  }
+  .skill .muted {
+    font-size: 16px;
+    margin: 0 0 16px;
+  }
+  .skills hr {
+    border: 0;
+    border-top: 1px solid var(--rule);
+    margin: 24px 0 20px;
+  }
+  .skills__social {
+    margin-top: 16px;
+  }
+
+  .featured-quote {
+    background: var(--bg);
+  }
+  .featured-quote figure {
+    position: relative;
+    margin-inline: auto;
+    padding-left: calc(var(--gutter) + 70px);
+  }
+  .featured-quote__mark {
+    position: absolute;
+    left: var(--gutter);
+    top: 8px;
+    opacity: 0.2;
+  }
+  .featured-quote blockquote {
+    margin: 0;
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 1.6;
+    letter-spacing: -1px;
+  }
+  .featured-quote blockquote p {
+    margin: 0 0 1em;
+  }
+  .featured-quote figcaption {
+    text-align: right;
+    color: var(--muted);
+  }
+
+  .experience {
+    background: var(--dark);
+  }
+  .experience .h-section {
+    color: #fff;
+  }
+  .experience__logos {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: center;
+    justify-items: center;
+    gap: 40px;
+    list-style: none;
+    margin: 40px 0 48px;
+    padding: 0;
+  }
+  .experience__logos :global(img) {
+    max-height: 210px;
+    width: auto;
+  }
+
+  .recs {
+    background: var(--cream);
+    overflow: hidden;
+  }
+  .carousel {
+    margin: 40px 0;
+  }
+  .carousel__track {
+    display: flex;
+    gap: 60px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    padding-inline: calc(50% - min(300px, 40vw));
+    scrollbar-width: none;
+  }
+  .carousel__track::-webkit-scrollbar {
+    display: none;
+  }
+  .carousel__slide {
+    flex: 0 0 min(600px, 80vw);
+    margin: 0;
+    scroll-snap-align: center;
+    text-align: center;
+    opacity: 0.4;
+    transition: opacity 0.3s;
+  }
+  .carousel__slide:global(.is-active) {
+    opacity: 1;
+  }
+  .carousel__slide blockquote {
+    margin: 0 0 24px;
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 1.6;
+    letter-spacing: -0.5px;
+  }
+  .carousel__slide figcaption {
+    color: var(--muted);
+  }
+  .carousel__dots {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 32px;
+  }
+  .carousel__dots button {
+    width: 10px;
+    height: 10px;
+    padding: 0;
+    border: 0;
+    border-radius: 50%;
+    background: #ccc;
+    cursor: pointer;
+  }
+  .carousel__dots button[aria-current='true'] {
+    background: var(--link);
+  }
+
+  @media (max-width: 767px) {
+    .hero :global(.hero__img) {
+      margin-bottom: 0;
+    }
+    .hero__text {
+      padding-bottom: 0;
+    }
+    .hero {
+      padding-bottom: 40px;
+    }
+    .experience__logos {
+      grid-template-columns: 1fr;
+    }
+    .experience__logos :global(img) {
+      max-height: 120px;
+    }
+    .featured-quote figure {
+      padding-left: var(--gutter);
+      padding-top: 48px;
+    }
+    .featured-quote blockquote {
+      font-size: 20px;
+    }
+  }
+</style>

@@ -1,0 +1,76 @@
+---
+import Icon from './Icon.astro';
+import Img from './Img.astro';
+import SocialLinks from './SocialLinks.astro';
+import { paragraphs, type SiteSettings } from '../lib/content';
+
+interface Props {
+  settings: SiteSettings;
+}
+
+const { contact, email, location, socialLinks } = Astro.props.settings;
+---
+
+<section id="contact" class="contact section">
+  <div class="container split">
+    <div class="contact__text">
+      <h2 class="h-section">{contact.heading}</h2>
+      <p class="contact__sub">{contact.subheading}</p>
+      <hr />
+      {paragraphs(contact.body).map((p) => <p class="muted">{p}</p>)}
+      <ul class="contact__details">
+        <li><Icon name="location-dot" class="contact__icon" />{location}</li>
+        <li>
+          <Icon name="envelope" class="contact__icon" /><a href={`mailto:${email}`}>{email}</a>
+        </li>
+      </ul>
+      <SocialLinks links={socialLinks} />
+    </div>
+    <Img image={contact.image} widths={[400, 640, 960]} sizes="(max-width: 767px) 100vw, 480px" class="contact__img" />
+  </div>
+</section>
+
+<style>
+  .contact {
+    background: var(--bg);
+  }
+  .split {
+    align-items: center;
+  }
+  .contact__sub {
+    margin: 0 0 20px;
+    color: var(--ink);
+    font-size: 18px;
+  }
+  hr {
+    border: 0;
+    border-top: 1px solid var(--ink);
+    margin: 0 0 20px;
+  }
+  .contact__details {
+    list-style: none;
+    padding: 0;
+    margin: 40px 0 24px;
+    display: grid;
+    gap: 12px;
+    font-size: 16px;
+    color: var(--ink);
+  }
+  .contact__details li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .contact__details :global(.contact__icon) {
+    color: var(--link);
+    width: 18px;
+    flex: none;
+  }
+  .contact__details a {
+    color: var(--link);
+  }
+  :global(.contact__img) {
+    width: 100%;
+    max-width: 480px;
+  }
+</style>

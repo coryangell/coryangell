@@ -1,0 +1,179 @@
+{
+  "settings": {
+    "title": "Cory Angell",
+    "description": "Cory Angell is a Portland, Oregon based digital product manager specializing in MarTech integrations, content management (CMS), and SEO strategy.",
+    "email": "hi@coryangell.com",
+    "location": "Portland, Oregon based",
+    "googleTagId": "GT-PZMLWT6",
+    "navigation": [
+      { "label": "Home", "href": "/" },
+      { "label": "About", "href": "/about/" },
+      { "label": "Bookshelf", "href": "/bookshelf/" },
+      { "label": "Blog", "href": "https://coryangell.medium.com" },
+      { "label": "Resume", "href": "https://www.linkedin.com/in/coryangell" },
+      { "label": "Contact", "href": "#contact" }
+    ],
+    "socialLinks": [
+      { "platform": "linkedin", "url": "https://www.linkedin.com/in/coryangell" },
+      { "platform": "medium", "url": "https://coryangell.medium.com" },
+      { "platform": "twitter", "url": "https://www.twitter.com/coryangell" }
+    ],
+    "contact": {
+      "heading": "Get in touch",
+      "subheading": "Let's create something awesome!",
+      "body": "I'm always looking to collaborate on fun and interesting projects. If you'd like to discuss how we can work together to make your next project a success, send me a message.",
+      "image": { "file": "cory-contact.jpg", "alt": "Cory Angell lying in the grass among daisies, smiling" }
+    }
+  },
+
+  "home": {
+    "seoTitle": "Cory Angell – DIGITAL PRODUCT MANAGER | MARTECH INTEGRATIONS | CONTENT MANAGEMENT (CMS) | SEO STRATEGIST",
+    "seoDescription": "Product manager with a background in Product Management, Content Management (CMS), Martech, SEO Strategy, Technical Writing and Digital Marketing.",
+    "hero": {
+      "heading": "Product Manager",
+      "body": "Are you looking for a team player with a background in Product Management, Content Management (CMS), Martech, SEO Strategy, Technical Writing and Digital Marketing?\n\nIf so, let's connect and discuss your goals!",
+      "ctaLabel": "Get in touch",
+      "ctaHref": "#contact",
+      "image": { "file": "cory-hero.jpg", "alt": "Cory Angell standing in front of a wall mural of chalk angel wings" }
+    },
+    "logos": [
+      { "file": "logo-yahoo-black.png", "alt": "Yahoo" },
+      { "file": "logo-umpqua-black.png", "alt": "Umpqua Bank" },
+      { "file": "logo-splash-black.png", "alt": "Splash" },
+      { "file": "logo-adobe-black.png", "alt": "Adobe" },
+      { "file": "logo-cloudflare-black.png", "alt": "Cloudflare" }
+    ],
+    "about": {
+      "heading": "About",
+      "tagline": "FATHER, TECHNOLOGIST, INNOVATOR, OUTDOOR ENTHUSIAST",
+      "body": "I’m a driven and dedicated agile product manager with a focus on building cross-functional partnerships and consistently delivering business results in a high-performance culture. With a demonstrated ability to troubleshoot critical issues and minimize project scope creep, I will take on significant accountability while successfully adapting to ever-changing situations.\n\nAs a true digital native, technology has inspired me from an early age. With experience in Agile product management, team building, cloud integration, MarTech, web analytics, engagement tracking, SEO, and content management systems (CMS), I have the digital expertise to drive your next project.\n\nI’m always looking to collaborate on fun and interesting projects. If you'd like to discuss how we can work together to make your next project a success, send me a message to start the conversation."
+    },
+    "certifications": [
+      { "file": "cert-cspo.png", "alt": "Scrum Alliance Certified Scrum Product Owner (CSPO) badge" },
+      { "file": "cert-brightedge.png", "alt": "BrightEdge Certified Professional" },
+      { "file": "cert-google-analytics.png", "alt": "Google Analytics Certified Professional" }
+    ],
+    "skills": {
+      "heading": "Skills",
+      "items": [
+        { "title": "Product Management", "description": "CSPO/PM certified technical product manager" },
+        { "title": "Content Strategy/Management", "description": "I take an Agile approach to content. Ask me about how I helped integrate an enterprise level content team with the product and development team." },
+        { "title": "Google Tag Manager/Analytics", "description": "Building Dashboards, Tagging events, and creating goals. I can build the framework to track your site engagement." },
+        { "title": "Search Engine Optimization (SEO)", "description": "I specialize in quantifying the ROI benefits of organic traffic." }
+      ],
+      "ctaLabel": "More skills",
+      "ctaHref": "https://www.linkedin.com/in/coryangell"
+    },
+    "featuredQuote": {
+      "quote": "“Cory ... continually demonstrated strength in translating designs into functional web pages ... His desire for improvement lends itself to assuring pages and content are relevant and can be found by both users and search engines.\n\nCory’s ... skill for creating a logical CMS environment allows for inevitable growth and expansion. He plans multiple steps ahead but is flexible enough to adapt to changing circumstances.”",
+      "attribution": "Alexandro Paz"
+    },
+    "experience": {
+      "heading": "Experience",
+      "logos": [
+        { "file": "logo-umpqua-white.png", "alt": "Umpqua Bank" },
+        { "file": "logo-yahoo-white.png", "alt": "Yahoo" },
+        { "file": "logo-adobe-white.png", "alt": "Adobe" }
+      ],
+      "ctaLabel": "Full portfolio",
+      "ctaHref": "https://www.linkedin.com/in/coryangell"
+    },
+    "recommendations": {
+      "heading": "Colleague recommendations",
+      "items": [
+        { "quote": "“Put simply, Cory is great to work with. His leadership, vision, and constant drive to go above and beyond for the Customer is what sets him apart. As the product owner for our scrum team, Cory sets our goals high, lives them himself, and has built the best team I have ever been a part of. I highly recommend Cory!”", "attribution": "Ken Hooker" },
+        { "quote": "\"Working with Cory at Umpqua is just easy. He's always up for the normal and often crazy requests I have for my line of business. From tactical to web design to strategy, Cory has helped me not only shift the way we engage with customers and prospects online, but how. His sharp mind, technical expertise, appreciated wit and willingness to jump in and get stuff done (often an aggressive timeline) is always appreciated.\"", "attribution": "Jodi Jordan" },
+        { "quote": "\"Working with Cory is easy. He is a driven individual who is able to communicate effectively and see to the root of an issue quickly. He is solutions oriented, and highly collaborative. I worked as a developer on Cory's team, and always felt confident in his ability to decipher business needs, scope them well, and work with tech and business to deliver results.\"", "attribution": "Kaitie Fox" }
+      ],
+      "ctaLabel": "More recommendations",
+      "ctaHref": "https://www.linkedin.com/in/coryangell/details/recommendations/"
+    }
+  },
+
+  "about": {
+    "seoTitle": "About – Cory Angell",
+    "seoDescription": "A digital alchemist: born and raised in the Pacific Northwest, Cory Angell is a product manager, writer, musician, DIY enthusiast, father, and adventurer.",
+    "hero": {
+      "heading": "A Digital Alchemist",
+      "tagline": "- Technology is my inspiration -",
+      "intro": "Born and raised in the Pacific Northwest with a hint of East Coast mentality. Lover of the outdoors, technology, adventure, story-telling, good food, and better company. I'm enthusiastic and animated when talking about my passions.",
+      "image": { "file": "cory-about.jpg", "alt": "Cory Angell in sunglasses taking a selfie beside street art of Bill Murray" },
+      "ctaLabel": "Get in touch",
+      "ctaHref": "#contact"
+    },
+    "experience": {
+      "heading": "Experience",
+      "items": [
+        { "title": "Agile Product Management", "description": "I'm highly driven and dedicated to building cross-functional partnerships and delivering consistent business results in a high-performance culture. I possess the unique ability to troubleshoot and find solutions in the midst of chaos." },
+        { "title": "Digital Content Strategy/Management", "description": "I take an Agile approach to content. Ask me about how I helped integrate an enterprise level content team with the product and development team." },
+        { "title": "Google Marketing Platform", "description": "Building dashboards, tagging events, and creating goals. I can build the framework to track your site engagement." },
+        { "title": "Search Engine Optimization (SEO)", "description": "I specialize in quantifying the ROI benefits of organic traffic." }
+      ],
+      "linkLabel": "Experience",
+      "linkHref": "https://www.linkedin.com/in/coryangell"
+    },
+    "quote": {
+      "quote": "In the future, the great division will be between those who have trained themselves to handle these complexities and those who are overwhelmed by them ... those who can acquire skills and discipline their minds and those who are irrevocably distracted by all the media around them and can never focus enough to learn.",
+      "attribution": "Robert Greene"
+    },
+    "hobbies": {
+      "heading": "Hobbies: It's the moments between the milestones that bring the greatest satisfaction",
+      "items": [
+        { "icon": "desktop", "title": "A digital native", "description": "Emerging technologies are one of my favorite topics to learn more about." },
+        { "icon": "robot", "title": "ML/LLM/AI", "description": "The advances in AI models over the last few years have been astounding." },
+        { "icon": "pencil", "title": "Creative Writing", "description": "I just finished my first draft of a sci-fi detective novel. No, you can't read it... yet. I'm also a huge fan of visual storytelling mediums." },
+        { "icon": "guitar", "title": "Musician", "description": "I play guitar. Just like everybody else... Thankfully, I can't sing so you won't hear me out at any open mic nights." },
+        { "icon": "hammer", "title": "DIY Enthusiast", "description": "I love to tinker. Fixing cars, renovating/updating my home, picking up overly complex hobbies." },
+        { "icon": "diagram-project", "title": "Home and Business Automation", "description": "I'm constantly trying out new smart home gadgets and finding ways to automate repetetive tasks." },
+        { "icon": "child", "title": "Father", "description": "I'm the lucky father of two amazing daughters. They're by far my most rewarding adventure!" },
+        { "icon": "burger", "title": "Chef", "description": "My father is an award winning chef and former school teacher. He taught me the value of quality ingredients and experimentation." },
+        { "icon": "plane-departure", "title": "Adventurer", "description": "Travelling, camping, outdoor exploration, surfer. Former: skydiver, snowboarder, aspiring travel blogger..." }
+      ]
+    },
+    "closingQuote": {
+      "quote": "“I collect hobbies. I see someone doing something I like, and I get books and learn how to do it.”",
+      "attribution": "Penelope Stamp, Brothers Bloom"
+    }
+  },
+
+  "bookshelf": {
+    "seoTitle": "Bookshelf – Cory Angell",
+    "seoDescription": "A selection of books from Cory Angell's library that have been particularly insightful or helped shape his worldview: product management, business, stoicism, writing, and more.",
+    "heading": "Cory's Bookshelf",
+    "intro": "Books are one of my favorite things in the world. Vessels of knowledge and entertainment. They inspire, challenge, and offer respite from the chaos of the outside world. They force you to disconnect from technology and introspect. Below are a selection from my library I've found particularly insightful or have helped shape my worldview in a meaningful way.\n\nReach out and ask me about my fiction favorites!",
+    "books": [
+      { "title": "Indistractable", "author": "Nir Eyal", "cover": { "file": "book-indistractable-nir-eyal.jpg" }, "url": "https://a.co/d/09kMEZQd", "description": "Practical advice and techniques for avoiding distractions and staying focused on what matters." },
+      { "title": "The Obstacle Is the Way", "author": "Ryan Holiday", "cover": { "file": "book-the-obstacle-is-the-way-ryan-holiday.jpg" }, "url": "https://www.amazon.com/Obstacle-Way-Timeless-Turning-Triumph-ebook/dp/B00G3L1B8K", "description": "Draw on the principles of Stoicism to help turn your obstacles into opportunities." },
+      { "title": "Tribes", "author": "Seth Godin", "cover": { "file": "book-tribes-seth-godin.jpg" }, "url": "https://www.amazon.com/Tribes-We-Need-You-Lead-ebook/dp/B001FA0LAI", "description": "Create a community of followers and fans who share your values and mission." },
+      { "title": "Escaping the Build Trap", "author": "Melissa Perri", "cover": { "file": "book-escaping-the-build-trap-melissa-perri.jpg" }, "url": "https://www.amazon.com/Escaping-Build-Trap-Effective-Management-ebook/dp/B07K3QBWG1", "description": "A guide for product managers to escape the cycle of building products without focused value." },
+      { "title": "Inspired", "author": "Marty Cagan", "cover": { "file": "book-inspired-marty-cagan.jpg" }, "url": "https://www.amazon.com/INSPIRED-Create-Tech-Products-Customers-ebook/dp/B077NRB36N", "description": "The utopian vision of a functioning product led team." },
+      { "title": "Ikigai", "author": "Héctor García & Francesc Miralles", "cover": { "file": "book-ikigai-hector-garcia-francesc-miralles.jpg" }, "url": "https://www.amazon.com/Ikigai-Japanese-Secret-Long-Happy-ebook/dp/B01NAG34EH", "description": "Finding your purpose and meaning in life by identifying what you love, what you're good at, what the world needs, and what you can be paid for." },
+      { "title": "Mastery", "author": "Robert Greene", "cover": { "file": "book-mastery-robert-greene.jpg" }, "url": "https://www.amazon.com/Mastery-Robert-Greene-ebook/dp/B007V65PBK", "description": "Achieving mastery in any field by following a process of learning, practice, and experimentation." },
+      { "title": "Influence", "author": "Robert B. Cialdini", "cover": { "file": "book-influence-robert-b-cialdini.jpg" }, "url": "https://www.amazon.com/Influence-New-Expanded-Psychology-Persuasion-ebook/dp/B08HZ57WYN", "description": "Understanding the psychology of persuasion and influence to better navigate human behavior." },
+      { "title": "DotCom Secrets", "author": "Russell Brunson", "cover": { "file": "book-dotcom-secrets-russel-brunson.jpg" }, "url": "https://www.amazon.com/gp/product/B085BSSHJ6", "description": "Building and growing a successful online business through effective marketing strategies and sales funnels." },
+      { "title": "On Writing", "author": "Stephen King", "cover": { "file": "book-on-writing-stephen-king.jpg" }, "url": "https://www.amazon.com/Writing-Memoir-Craft-Stephen-King-ebook/dp/B000FC0SIM", "description": "A memoir and guide to writing by one of the most successful and prolific authors of our time." },
+      { "title": "Homo Deus", "author": "Yuval Noah Harari", "cover": { "file": "book-homo-deus-yuval-noah-harari.jpg" }, "url": "https://www.amazon.com/gp/product/B01BBQ33VE", "description": "Explores the potential future of humanity and the implications of advanced technology and artificial intelligence." },
+      { "title": "Outliers", "author": "Malcolm Gladwell", "cover": { "file": "book-outliers-malcolm-gladwell.jpg" }, "url": "https://www.amazon.com/Outliers-Story-Success-Malcolm-Gladwell-ebook/dp/B001ANYDAO", "description": "Understanding the factors that contribute to exceptional success in various fields, using real-world examples." },
+      { "title": "7-Figure Fiction", "author": "T. Taylor", "cover": { "file": "book-7-figure-fiction-t-taylor.jpg" }, "url": "https://www.amazon.com/gp/product/B09FGZQV4D", "description": "Writing and self-publishing successful fiction books that generate significant income." },
+      { "title": "21 Lessons for the 21st Century", "author": "Yuval Noah Harari", "cover": { "file": "book-21-lessons-for-the-21st-centrury-yuval-noah-harari.jpg" }, "url": "https://www.amazon.com/Lessons-21st-Century-Yuval-Harari-ebook/dp/B079WM7KLS", "description": "Examines the major challenges facing humanity in the modern era and how we can best navigate them." },
+      { "title": "The $100 Startup", "author": "Chris Guillebeau", "cover": { "file": "book-100-dollar-startup-chris-guillebeau.jpg" }, "url": "https://www.amazon.com/100-Startup-Reinvent-Living-Create-ebook/dp/B0067TGSOK", "description": "Pursuing your passion and creating a business with minimal resources and capital." },
+      { "title": "Atomic Habits", "author": "James Clear", "cover": { "file": "book-atomic-habits-james-clear.jpg" }, "url": "https://www.amazon.com/Atomic-Habits-Proven-Build-Break-ebook/dp/B07D23CFGR", "description": "Making small changes in your habits and routines to achieve significant improvements in your life." },
+      { "title": "Hooked", "author": "Nir Eyal", "cover": { "file": "book-hooked-nir-eyal.jpg" }, "url": "https://www.amazon.com/gp/product/B00LMGLXTS", "description": "A guide for creating habit-forming products that keep users coming back." },
+      { "title": "Blue Ocean Strategy", "author": "W. Chan Kim & Renée Mauborgne", "cover": { "file": "book-blue-ocean-strategy-w-chan-kim-renee-mauborgne.jpg" }, "url": "https://www.amazon.com/Blue-Ocean-Strategy-Expanded-Uncontested-ebook/dp/B00O4CRR7Y", "description": "A strategic framework for creating uncontested marketspaces and making the competition irrelevant." },
+      { "title": "The Daily Stoic", "author": "Ryan Holiday", "cover": { "file": "book-daily-stoic-ryan-holiday.jpg" }, "url": "https://www.amazon.com/gp/product/B01HNJIJB2", "description": "Incorporating Stoic philosophy into your daily life to cultivate inner peace, resilience, and wisdom." },
+      { "title": "Empowered", "author": "Marty Cagan & Chris Jones", "cover": { "file": "book-empowered-marty-cagan-chris-jones.jpg" }, "url": "https://www.amazon.com/EMPOWERED-Ordinary-Extraordinary-Products-Silicon-ebook/dp/B08LPKRD5L", "description": "Create a successful product team by prioritizing user needs, effective collaboration, and continuous learning and improvement." },
+      { "title": "Purple Cow", "author": "Seth Godin", "cover": { "file": "book-purple-cow-seth-godin.jpg" }, "url": "https://www.amazon.com/Purple-Cow-New-Transform-Remarkable-ebook/dp/B00316UMS0", "description": "Standing out from the competition by creating something truly remarkable and unique." },
+      { "title": "Sapiens", "author": "Yuval Noah Harari", "cover": { "file": "book-sapiens-yuval-noah-harari.jpg" }, "url": "https://www.amazon.com/gp/product/B07T9F5LX3", "description": "Understanding the history of humanity and how it has shaped the modern world." },
+      { "title": "Save the Cat!", "author": "Blake Snyder", "cover": { "file": "book-save-the-cat-blake-snyder.jpg" }, "url": "https://www.amazon.com/Save-Cat-Last-Screenwriting-Youll-ebook/dp/B00340ESIS", "description": "An excellent primer on story plotting and outlining." },
+      { "title": "Start with Why", "author": "Simon Sinek", "cover": { "file": "book-start-with-why-simon-sinek.jpg" }, "url": "https://www.amazon.com/Start-Why-Leaders-Inspire-Everyone-ebook/dp/B002Q6XUE4", "description": "The importance of having a clear purpose and mission, and how it can drive success and loyalty." },
+      { "title": "The 4-Hour Workweek", "author": "Timothy Ferriss", "cover": { "file": "book-the-4-hour-workweek-timothy-ferriss.jpg" }, "url": "https://www.amazon.com/4-Hour-Workweek-Expanded-Updated-Cutting-Edge-ebook/dp/B002WE46UW", "description": "A book written by a workoholic about delegating as much as you can and using the 80/20 rule to simplify your focus." },
+      { "title": "The Big Leap", "author": "Gay Hendricks", "cover": { "file": "book-the-big-leap-gay-hendricks.jpg" }, "url": "https://www.amazon.com/Big-Leap-Conquer-Hidden-Level-ebook/dp/B0026772QU", "description": "Overcoming limiting beliefs and fears to reach your full potential and achieve success." },
+      { "title": "The Subtle Art of Not Giving a F*ck", "author": "Mark Manson", "cover": { "file": "book-the-subtle-art-of-not-giving-a-fck-mark-manson.jpg" }, "url": "https://www.amazon.com/Subtle-Art-Not-Giving-Counterintuitive-ebook/dp/B019MMUA8S", "description": "Prioritizing what truly matters in life and letting go of things that don't." },
+      { "title": "The Five Dysfunctions of a Team", "author": "Patrick M. Lencioni", "cover": { "file": "book-the-five-dysfunctions-of-a-team-patrick-m-lencioni.jpg" }, "url": "https://www.amazon.com/Five-Dysfunctions-Team-Leadership-Lencioni-ebook/dp/B006960LQW", "description": "Overcoming common pitfalls that hinder team success, including lack of trust, fear of conflict, and lack of commitment. (pg.91 sums up the entire book)" },
+      { "title": "The Lean Startup", "author": "Eric Ries", "cover": { "file": "book-the-lean-startup-eric-ries.jpg" }, "url": "https://www.amazon.com/gp/product/B004J4XGN6", "description": "Building and launching products efficiently by testing assumptions, measuring progress, and iterating quickly." },
+      { "title": "The First 90 Days", "author": "Michael Watkins", "cover": { "file": "book-the-first-90-days-michael-watkins.jpg" }, "url": "https://www.amazon.com/First-Days-Updated-Expanded-Strategies-ebook/dp/B00B6U63ZE", "description": "A roadmap for executives and managers to successfully transition into a new role or organization." },
+      { "title": "The War of Art", "author": "Steven Pressfield", "cover": { "file": "book-the-war-of-art-steven-pressfield.jpg" }, "url": "https://www.amazon.com/War-Art-Steven-Pressfield-ebook/dp/B007A4SDCG", "description": "Insights and advice on how to overcome creative resistance and unlock one's full potential." },
+      { "title": "Unleashing the Ideavirus", "author": "Seth Godin", "cover": { "file": "book-unleashing-the-ideavirus-seth-godin.jpg" }, "url": "https://www.amazon.com/Unleashing-Ideavirus-Marketing-Epidemics-Customers-ebook/dp/B0042XA3A8", "description": "Create remarkable products or ideas that people can't help but talk about and share with others." }
+    ]
+  }
+}

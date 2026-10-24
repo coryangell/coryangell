@@ -1,0 +1,37 @@
+---
+import { Image } from 'astro:assets';
+import { createImageUrlBuilder } from '@sanity/image-url';
+import { sanityConfig, type SiteImage } from '../lib/content';
+
+interface Props {
+  image: SiteImage;
+  widths: number[];
+  sizes: string;
+  alt?: string;
+  class?: string;
+  loading?: 'eager' | 'lazy';
+}
+
+const { image, widths, sizes, alt = image.alt, class: className, loading = 'lazy' } = Astro.props;
+const builder = sanityConfig ? createImageUrlBuilder(sanityConfig) : null;
+const url = (w: number) =>
+  builder && image.kind === 'sanity' ? builder.image(image.source).width(w).fit('max').auto('format').url() : '';
+---
+
+{
+  image.kind === 'local' ? (
+    <Image src={image.src} {widths} {sizes} {alt} class={className} {loading} />
+  ) : (
+    <img
+      src={url(Math.max(...widths))}
+      srcset={widths.map((w) => `${url(w)} ${w}w`).join(', ')}
+      {sizes}
+      {alt}
+      width={image.width}
+      height={image.height}
+      class={className}
+      {loading}
+      decoding="async"
+    />
+  )
+}

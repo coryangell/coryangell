@@ -1,0 +1,202 @@
+---
+import Base from '../layouts/Base.astro';
+import Img from '../components/Img.astro';
+import Icon from '../components/Icon.astro';
+import { getContent } from '../lib/content';
+
+const { about } = await getContent();
+const { hero, experience, quote, hobbies, closingQuote } = about;
+---
+
+<Base title={about.seoTitle} description={about.seoDescription}>
+  <section class="intro">
+    <div class="container narrow center">
+      <h1 class="h-display">{hero.heading}</h1>
+      <p class="intro__tagline">{hero.tagline}</p>
+      <p class="intro__text">{hero.intro}</p>
+    </div>
+  </section>
+
+  <section class="experience">
+    <div class="container split">
+      <div class="experience__media">
+        <Img image={hero.image} widths={[480, 720, 960]} sizes="(max-width: 767px) 100vw, 480px" loading="eager" />
+        <a class="btn" href={hero.ctaHref}>{hero.ctaLabel}</a>
+      </div>
+      <div>
+        <h2 class="h-section center">{experience.heading}</h2>
+        {
+          experience.items.map((item) => (
+            <div class="exp-item">
+              <h3>{item.title}</h3>
+              <p class="muted">{item.description}</p>
+            </div>
+          ))
+        }
+        <a class="more-link" href={experience.linkHref} target="_blank" rel="noopener">
+          {experience.linkLabel}
+          <Icon name="arrow-right" />
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="quote-band">
+    <figure class="container quote-card">
+      <blockquote>{quote.quote}</blockquote>
+      <figcaption>- {quote.attribution}</figcaption>
+    </figure>
+  </section>
+
+  <section class="hobbies section">
+    <div class="container">
+      <h2 class="hobbies__heading center">{hobbies.heading}</h2>
+      <ul class="hobbies__grid">
+        {
+          hobbies.items.map((item) => (
+            <li>
+              <Icon name={item.icon} class="hobby__icon" />
+              <h3>{item.title}</h3>
+              <p class="muted">{item.description}</p>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  </section>
+
+  <section class="quote-band">
+    <figure class="container quote-card">
+      <blockquote>{closingQuote.quote}</blockquote>
+      <figcaption>- {closingQuote.attribution}</figcaption>
+    </figure>
+  </section>
+</Base>
+
+<style>
+  .narrow {
+    max-width: calc(780px + 2 * var(--gutter));
+  }
+  .intro {
+    padding: 0 0 56px;
+  }
+  .intro .h-display {
+    font-size: 44px;
+    letter-spacing: -1px;
+  }
+  .intro__tagline {
+    font-size: 20px;
+    margin: 16px 0;
+  }
+  .intro__text {
+    margin: 0;
+    font-size: 17px;
+  }
+
+  .experience {
+    padding-bottom: 32px;
+  }
+  .experience .split {
+    gap: 24px;
+    max-width: calc(980px + 2 * var(--gutter));
+  }
+  .experience__media {
+    display: grid;
+    justify-items: center;
+    gap: 40px;
+    align-content: start;
+  }
+  .experience .h-section {
+    font-size: 40px;
+    letter-spacing: -1px;
+    margin: 20px 0 16px;
+  }
+  .exp-item h3 {
+    font-size: 17px;
+    letter-spacing: 0;
+    margin-bottom: 12px;
+  }
+  .exp-item .muted {
+    font-size: 15px;
+    margin: 0 0 36px;
+  }
+  .more-link {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 8px;
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 14px;
+    color: var(--muted);
+    text-decoration: none;
+  }
+  .more-link:hover {
+    color: var(--ink);
+  }
+
+  .quote-band {
+    background: var(--band);
+    padding: 30px 0;
+  }
+  .quote-card {
+    max-width: calc(980px - 2 * var(--gutter));
+    margin: 0 auto;
+    padding: 64px 13%;
+    background: #fff;
+    border-radius: 6px;
+    text-align: center;
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 1.4;
+  }
+  .quote-card blockquote {
+    margin: 0;
+  }
+
+  .hobbies__heading {
+    font-size: 24px;
+    line-height: 1.4;
+    max-width: 500px;
+    margin: 0 auto 64px;
+  }
+  .hobbies__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 48px 24px;
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0;
+    list-style: none;
+  }
+  .hobbies__grid :global(.hobby__icon) {
+    width: auto;
+    height: 52px;
+    margin-bottom: 16px;
+  }
+  .hobbies__grid h3 {
+    font-size: 15px;
+    letter-spacing: 0;
+    margin-bottom: 12px;
+  }
+  .hobbies__grid .muted {
+    font-size: 15px;
+    margin: 0;
+  }
+
+  @media (max-width: 767px) {
+    .hobbies__grid {
+      grid-template-columns: 1fr;
+    }
+    .quote-card {
+      padding: 40px 24px;
+      font-size: 20px;
+    }
+  }
+  @media (min-width: 768px) and (max-width: 991px) {
+    .hobbies__grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+</style>

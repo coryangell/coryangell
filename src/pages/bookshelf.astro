@@ -1,0 +1,104 @@
+---
+import Base from '../layouts/Base.astro';
+import Img from '../components/Img.astro';
+import SocialLinks from '../components/SocialLinks.astro';
+import { getContent, paragraphs } from '../lib/content';
+
+const { bookshelf, settings } = await getContent();
+---
+
+<Base title={bookshelf.seoTitle} description={bookshelf.seoDescription}>
+  <section class="intro">
+    <div class="container center">
+      <h1>{bookshelf.heading}</h1>
+      {paragraphs(bookshelf.intro).map((p) => <p>{p}</p>)}
+      <div class="intro__social"><SocialLinks links={settings.socialLinks} /></div>
+    </div>
+  </section>
+
+  <section class="books" aria-label="Books">
+    <ul class="container books__grid">
+      {
+        bookshelf.books.map((book, i) => (
+          <li class="book">
+            <a href={book.url} target="_blank" rel="noopener">
+              <Img
+                image={book.cover}
+                alt={book.cover.alt || `${book.title} by ${book.author}`}
+                widths={[200, 400]}
+                sizes="200px"
+                class="book__cover"
+                loading={i < 4 ? 'eager' : 'lazy'}
+              />
+            </a>
+            <p>{book.description}</p>
+          </li>
+        ))
+      }
+    </ul>
+  </section>
+</Base>
+
+<style>
+  .intro {
+    padding: 40px 0 48px;
+    border-bottom: 1px solid var(--rule);
+  }
+  .intro .container {
+    max-width: calc(720px + 2 * var(--gutter));
+  }
+  h1 {
+    font-family: var(--font-body);
+    font-weight: 400;
+    font-size: 36px;
+    letter-spacing: -0.5px;
+    margin-bottom: 20px;
+  }
+  .intro p {
+    margin: 0 0 1.2em;
+  }
+  .intro__social {
+    display: flex;
+    justify-content: center;
+  }
+
+  .books__grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    list-style: none;
+    margin-block: 0 80px;
+    max-width: calc(940px + 2 * var(--gutter));
+  }
+  .book {
+    padding: 72px 14px 40px;
+    border-bottom: 1px solid var(--rule);
+  }
+  .book a {
+    display: block;
+    transition: transform 0.2s;
+  }
+  .book a:hover {
+    transform: translateY(-4px);
+  }
+  .book :global(.book__cover) {
+    width: 100%;
+    max-width: 150px;
+    height: 210px;
+    object-fit: contain;
+    margin: 0 auto;
+  }
+  .book p {
+    margin: 16px 0 0;
+    font-size: 15px;
+    color: var(--muted);
+  }
+
+  @media (max-width: 767px) {
+    .books__grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    .book {
+      padding-top: 40px;
+    }
+  }
+</style>

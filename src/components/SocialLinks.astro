@@ -1,0 +1,61 @@
+---
+import Icon from './Icon.astro';
+import type { Social } from '../lib/content';
+
+interface Props {
+  links: Social[];
+  size?: 'sm' | 'lg';
+}
+
+const { links, size = 'lg' } = Astro.props;
+const meta = {
+  linkedin: { icon: 'linkedin', label: 'LinkedIn' },
+  medium: { icon: 'medium', label: 'Medium' },
+  twitter: { icon: 'twitter', label: 'Twitter' },
+};
+---
+
+<ul class:list={['social', `social--${size}`]}>
+  {
+    links.map((l) => (
+      <li>
+        <a href={l.url} rel="me noopener" target="_blank" aria-label={meta[l.platform].label}>
+          <Icon name={meta[l.platform].icon} />
+        </a>
+      </li>
+    ))
+  }
+</ul>
+
+<style>
+  .social {
+    display: flex;
+    gap: 0.4em;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .social--lg {
+    font-size: 48px;
+    gap: 0.3em;
+  }
+  .social--sm {
+    font-size: 18px;
+    gap: 0.8em;
+  }
+  a {
+    display: block;
+    color: var(--link);
+    line-height: 1;
+    transition: opacity 0.15s;
+  }
+  .social--sm a {
+    color: var(--muted);
+  }
+  a:hover {
+    opacity: 0.75;
+  }
+  svg {
+    display: block;
+  }
+</style>
